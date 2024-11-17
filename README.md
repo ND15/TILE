@@ -1,1 +1,0 @@
-## Thought In Layers Everywhere
