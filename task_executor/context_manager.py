@@ -51,7 +51,7 @@ class TaskContextManager:
         Returns:
             All failed attempts of a particular task
         """
-        return self.task_history.get(task_id, [])
+        return self.task_history.get(task_id, None)
 
     def get_last_attempt(self, task_id) -> TaskAttempt | None:
         """
