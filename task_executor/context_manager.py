@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 @dataclass
 class TaskAttempt:
     task: str = field(metadata={"desc": "task information"})
-    code: str = field(metadata={"desc": "generated code"})
+    code: str | None = field(metadata={"desc": "generated code"})
     timestamp: datetime = field(metadata={"desc": "timestamp for the generated code"})
     success: bool = field(metadata={"desc": "execution result"})
     error: Optional[Dict | str] = field(metadata={"desc": "error associated if any"})
