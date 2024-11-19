@@ -23,13 +23,14 @@ Previously Successful Tasks:
 {% endif %}
 
 {% if previous_failed_attempt %}
-Failed Attempts and Their Errors:
+Failed Attempts of the current task and its errors:
 {{ previous_failed_attempt }}
 {% endif %}
 
 {% if previous_attempt %}
 Your Last Attempt:
 {{ previous_attempt }}
+Reflect upon the previous error and solve it.
 {% endif %}
 
 </EXECUTION_CONTEXT>
@@ -56,6 +57,19 @@ You must follow the following criteria:
 - Do scraping only if no other option is there, otherwise try to use Python's packages.
 - Go step by step, solve each task carefully and test it.
 - Write the __main__ function for checking each generated code.
+
+You should respond in the following json format:
+```json
+{
+    task: the current task
+    code: generated python code response
+}
+```
+
+-Please do not add anything other than valid JSON output!
+-Use double quotes for the keys and string values.
+-Follow the JSON formatting conventions.
+
 """
 
 PLANNER_TASK_DESC_PROMPT = """
